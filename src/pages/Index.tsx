@@ -1,7 +1,7 @@
-import XpexLooper from "@/components/XpexLooper";
+import NeuralBank from "@/components/NeuralBank";
 
 const Index = () => {
-  return <XpexLooper />;
+  return <NeuralBank />;
 };
 
 export default Index;
