@@ -1,7 +1,7 @@
-import NeuralBank from "@/components/NeuralBank";
+import Layout from "@/components/Layout";
 
 const Index = () => {
-  return <NeuralBank />;
+  return <Layout />;
 };
 
 export default Index;

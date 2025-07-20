@@ -3,6 +3,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '@/components/ui/chart';
 import { AreaChart, Area, BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
+interface WalletState {
+  address: string | null;
+  connected: boolean;
+}
+
 interface BankMetrics {
   saldo_neural: number;
   bots_ativos: number;
@@ -77,6 +82,8 @@ export default function NeuralBank() {
 
   const [profitData, setProfitData] = useState(initialProfitData);
   const [botsData, setBotsData] = useState(initialBotsData);
+  const [wallet, setWallet] = useState<WalletState>({ address: null, connected: false });
+  const [feedback, setFeedback] = useState('');
 
   // Atualização em tempo real das métricas a cada 3 segundos
   useEffect(() => {
@@ -105,6 +112,47 @@ export default function NeuralBank() {
 
     return () => clearInterval(interval);
   }, []);
+
+  const connectMetaMask = async () => {
+    if (typeof (window as any).ethereum === 'undefined') {
+      setFeedback('MetaMask não detectado! Instale a extensão para continuar.');
+      return;
+    }
+    try {
+      const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
+      const userAddress = accounts[0];
+      setWallet({ address: userAddress, connected: true });
+      setFeedback(`Conectado: ${userAddress.substring(0, 6)}...${userAddress.substring(userAddress.length - 4)}`);
+    } catch (error) {
+      console.error("Erro ao conectar MetaMask:", error);
+      setFeedback('Falha ao conectar a carteira.');
+    }
+  };
+
+  const handleSaque = () => {
+    if (!wallet.connected) {
+      setFeedback('Conecte sua carteira MetaMask primeiro.');
+      return;
+    }
+    const valorSaque = prompt("Digite o valor para sacar (ex: 5000):");
+    const valorNumerico = parseFloat(valorSaque || '0');
+
+    if (!valorNumerico || valorNumerico <= 0) {
+      setFeedback('Valor de saque inválido.');
+      return;
+    }
+
+    if (valorNumerico > metrics.saldo_neural) {
+      setFeedback('Saldo insuficiente para o saque.');
+      return;
+    }
+
+    setFeedback(`Iniciando saque de $${valorNumerico.toLocaleString()} para ${wallet.address}...`);
+    setTimeout(() => {
+      setMetrics(prev => ({ ...prev, saldo_neural: prev.saldo_neural - valorNumerico }));
+      setFeedback(`Saque de $${valorNumerico.toLocaleString()} enviado! Processando na blockchain.`);
+    }, 2000);
+  };
 
   const handleActionClick = (actionTitle: string) => {
     alert(`Protocolo Neural Ativado: ${actionTitle}`);
@@ -253,18 +301,18 @@ export default function NeuralBank() {
       </div>
 
       {/* Actions Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {actions.map((action, index) => (
           <Card key={index} className="neural-card group cursor-pointer">
             <CardHeader>
-              <CardTitle className="text-xl font-semibold text-foreground">{action.title}</CardTitle>
+              <CardTitle className="text-lg font-semibold text-foreground">{action.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {action.description}
               </p>
               <button 
-                className="neural-button w-full"
+                className="neural-button w-full group-hover:scale-105"
                 onClick={() => handleActionClick(action.button)}
               >
                 {action.button}
@@ -272,6 +320,49 @@ export default function NeuralBank() {
             </CardContent>
           </Card>
         ))}
+        
+        {/* MetaMask Wallet Card */}
+        <Card className="neural-card border-primary/30">
+          <CardHeader>
+            <CardTitle className="text-lg font-semibold neural-glow">💰 Carteira MetaMask</CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            {wallet.connected ? (
+              <div className="space-y-3">
+                <p className="text-sm">
+                  <span className="text-muted-foreground">Status:</span> 
+                  <span className="neural-glow-positive ml-2">Conectado</span>
+                </p>
+                <p className="text-xs font-mono break-all text-muted-foreground">
+                  {wallet.address}
+                </p>
+                <button 
+                  className="neural-button w-full"
+                  onClick={handleSaque}
+                >
+                  Sacar Fundos
+                </button>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                <p className="text-sm text-muted-foreground">
+                  Conecte sua carteira MetaMask para realizar saques
+                </p>
+                <button 
+                  className="neural-button w-full"
+                  onClick={connectMetaMask}
+                >
+                  Conectar MetaMask
+                </button>
+              </div>
+            )}
+            {feedback && (
+              <div className="mt-3 p-2 bg-muted rounded text-xs">
+                {feedback}
+              </div>
+            )}
+          </CardContent>
+        </Card>
       </div>
 
       {/* Data Stream Effect */}
