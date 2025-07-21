@@ -1,7 +1,7 @@
-import Layout from "@/components/Layout";
+import MindCore from "@/components/MindCore";
 
 const Index = () => {
-  return <Layout />;
+  return <MindCore />;
 };
 
 export default Index;
