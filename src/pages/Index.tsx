@@ -1,7 +1,7 @@
-import MindCore from "@/components/MindCore";
+import XpexLooper from "@/components/XpexLooper";
 
 const Index = () => {
-  return <MindCore />;
+  return <XpexLooper />;
 };
 
 export default Index;
