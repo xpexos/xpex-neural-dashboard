@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Switch } from './ui/switch';
@@ -49,7 +49,7 @@ const NeuralGraph = () => (
         </div>
         
         {/* Painel Node */}
-        <div className="absolute top-8 right-8 w-12 h-12 bg-neural-green rounded-full flex items-center justify-center text-xs font-bold">
+        <div className="absolute top-8 right-8 w-12 h-12 bg-green-500 rounded-full flex items-center justify-center text-xs font-bold">
           XPEX
         </div>
         
@@ -286,51 +286,51 @@ const pageComponents = {
   'command-runner': CommandRunner
 };
 
-export default function MindCore() {
-  const [activePage, setActivePage] = useState('neural-graph');
+export interface MindCoreProps {
+  activeSubPage?: string;
+}
+
+export default function MindCore({ activeSubPage }: MindCoreProps) {
+  const [activePage, setActivePage] = useState(activeSubPage || 'neural-graph');
+
+  React.useEffect(() => {
+    if (activeSubPage) {
+      setActivePage(activeSubPage);
+    }
+  }, [activeSubPage]);
   
   const ActivePageComponent = pageComponents[activePage as keyof typeof pageComponents];
 
   return (
-    <div className="flex min-h-screen bg-background text-foreground">
-      {/* Sidebar */}
-      <aside className="w-64 bg-card border-r border-border flex flex-col">
-        <div className="p-6 border-b border-border">
-          <div className="flex items-center gap-2">
-            <span className="text-2xl">🧠</span>
-            <h1 className="text-xl font-bold neural-glow">MINDCORE</h1>
-          </div>
-        </div>
-        
-        <nav className="flex-1 p-4 space-y-2">
-          {sidebarItems.map(item => {
-            const Icon = item.icon;
-            return (
-              <button
-                key={item.id}
-                className={`w-full flex items-center gap-3 p-3 rounded-lg text-left transition-all duration-300 ${
-                  activePage === item.id 
-                    ? 'bg-primary/20 text-primary border border-primary/30 shadow-lg shadow-primary/20' 
-                    : 'text-muted-foreground hover:bg-muted hover:text-foreground'
-                }`}
-                onClick={() => setActivePage(item.id)}
-              >
-                <Icon className="w-5 h-5" />
-                <span className="font-medium">{item.label}</span>
-              </button>
-            );
-          })}
-        </nav>
-        
-        <div className="p-4 border-t border-border text-center text-sm text-muted-foreground">
-          XPEX Ultimate V3.0
-        </div>
-      </aside>
+    <div className="space-y-8">
+      {/* Header */}
+      <div className="text-center space-y-2">
+        <h1 className="text-4xl font-bold text-primary neural-glow">XPEX ULTIMATE MINDCORE</h1>
+        <p className="text-muted-foreground">Interface Neural de Controle Supremo</p>
+        <Badge variant="outline" className="text-green-400 border-green-400">
+          MENTE COLETIVA ATIVA
+        </Badge>
+      </div>
+
+      {/* Navigation Tabs */}
+      <div className="flex flex-wrap gap-2 justify-center">
+        {sidebarItems.map(item => (
+          <Button
+            key={item.id}
+            variant={activePage === item.id ? "default" : "outline"}
+            onClick={() => setActivePage(item.id)}
+            className="flex items-center gap-2"
+          >
+            <item.icon className="w-4 h-4" />
+            {item.label}
+          </Button>
+        ))}
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 p-6">
+      <div>
         <ActivePageComponent />
-      </main>
+      </div>
     </div>
   );
 }

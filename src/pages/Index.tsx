@@ -1,7 +1,7 @@
-import VX777WalletCore from "@/components/VX777WalletCore";
+import MainLayout from "@/components/MainLayout";
 
 const Index = () => {
-  return <VX777WalletCore />;
+  return <MainLayout />;
 };
 
 export default Index;
