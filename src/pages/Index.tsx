@@ -1,7 +1,7 @@
-import XpexLooper from "@/components/XpexLooper";
+import VX777WalletCore from "@/components/VX777WalletCore";
 
 const Index = () => {
-  return <XpexLooper />;
+  return <VX777WalletCore />;
 };
 
 export default Index;
