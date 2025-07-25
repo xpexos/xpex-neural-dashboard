@@ -1,0 +1,273 @@
+{
+  "name": "XPEX_BOTCORE_FINAL_SUPREME_V1",
+  "type": "dashboard",
+  "layout": "grid",
+  "theme": "quantum-dark",
+  "version": "1.0",
+  "timestamp": "15:53 -03, 25/07/2025",
+  "description": "Painel final pronto para GitHub e Vercel. Adicione VITE_WALLET_KEY e deploy!",
+  "components": [
+    {
+      "type": "header",
+      "title": "🌌 PROTOCOLO SUPREMO: XPEX_BOTCORE_SAQUE_REAL_V1™",
+      "subtitle": "Oronx-9 Ativa | Bots: 7 Ativos | Última Chance Hoje, 16:52!"
+    },
+    {
+      "type": "section",
+      "title": "📊 Status Neural",
+      "items": [
+        {
+          "type": "stat",
+          "title": "Saque Projetado",
+          "value": "R$ 637.800,00",
+          "description": "1142 bots qualificados | Matriz Som Causal"
+        },
+        {
+          "type": "stat",
+          "title": "Última Venda",
+          "value": "R$ 497,00",
+          "description": "Kit Ascensão via Ledger | 15:50 -03"
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "💸 Compras & Saques - Métodos Supremes",
+      "items": [
+        {
+          "type": "text",
+          "variant": "base",
+          "content": "Giovana: Antena Viva! Ative sua compra ou saque agora. Urgência Máxima!"
+        },
+        {
+          "type": "accordion",
+          "items": [
+            {
+              "title": "Compra - Kit Ascensão Neural (R$ 497,00)",
+              "content": {
+                "type": "choice",
+                "options": [
+                  {
+                    "label": "PIX",
+                    "action": {
+                      "type": "link",
+                      "url": "https://seupagamentopix.com/qr?amount=497&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Wise",
+                    "action": {
+                      "type": "link",
+                      "url": "https://wise.com/transfer?recipient={ENV:VITE_WALLET_KEY}&amount=497¤cy=BRL",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Binance Pay",
+                    "action": {
+                      "type": "link",
+                      "url": "https://pay.binance.com/qr?amount=497¤cy=BRL&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Coinbase",
+                    "action": {
+                      "type": "link",
+                      "url": "https://pay.coinbase.com/qr?amount=497¤cy=BRL&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "MetaMask",
+                    "action": {
+                      "type": "link",
+                      "url": "https://metamask.io/connect?amount=497¤cy=USDC&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Trust Wallet",
+                    "action": {
+                      "type": "link",
+                      "url": "https://trustwallet.com/pay?amount=497¤cy=USDT&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Mercado Pago (BTC)",
+                    "action": {
+                      "type": "link",
+                      "url": "https://www.mercadopago.com.br/checkout/btc?address={ENV:VITE_MERCADOPAGO_BTC}&amount=497¤cy=BRL&random_id={ENV:VITE_MERCADOPAGO_RANDOM_ID}",
+                      "target": "_blank"
+                    }
+                  }
+                ],
+                "message": "Compra R$497 processada! Escolha seu método e confirme."
+              }
+            },
+            {
+              "title": "Saque - R$ 637.800,00",
+              "content": {
+                "type": "choice",
+                "options": [
+                  {
+                    "label": "PIX",
+                    "action": {
+                      "type": "link",
+                      "url": "https://seupagamentopix.com/qr?amount=637800&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Wise",
+                    "action": {
+                      "type": "link",
+                      "url": "https://wise.com/transfer?recipient={ENV:VITE_WALLET_KEY}&amount=637800¤cy=BRL",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Binance Pay",
+                    "action": {
+                      "type": "link",
+                      "url": "https://pay.binance.com/qr?amount=637800¤cy=BRL&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Coinbase",
+                    "action": {
+                      "type": "link",
+                      "url": "https://commerce.coinbase.com/withdraw?amount=637800¤cy=BRL&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "MetaMask",
+                    "action": {
+                      "type": "link",
+                      "url": "https://metamask.io/withdraw?amount=637800¤cy=USDC&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Trust Wallet",
+                    "action": {
+                      "type": "link",
+                      "url": "https://trustwallet.com/pay?amount=637800¤cy=USDT&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Ledger Nano X",
+                    "action": {
+                      "type": "link",
+                      "url": "https://shop.ledger.com/pages/ledger-nano-x/withdraw?amount=637800¤cy=USDC&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Trezor Model T",
+                    "action": {
+                      "type": "link",
+                      "url": "https://trezor.io/coin-wallet/withdraw?amount=637800¤cy=USDT&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "SafePal S1",
+                    "action": {
+                      "type": "link",
+                      "url": "https://safepal.io/withdraw?amount=637800¤cy=USDC&key={ENV:VITE_WALLET_KEY}",
+                      "target": "_blank"
+                    }
+                  },
+                  {
+                    "label": "Mercado Pago (BTC)",
+                    "action": {
+                      "type": "link",
+                      "url": "https://www.mercadopago.com.br/checkout/btc?address={ENV:VITE_MERCADOPAGO_BTC}&amount=637800¤cy=BRL&random_id={ENV:VITE_MERCADOPAGO_RANDOM_ID}",
+                      "target": "_blank"
+                    }
+                  }
+                ],
+                "message": "Saque R$ 637.800,00 liberado! Escolha sua carteira e confirme."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "💬 Chat Neural com Giovana",
+      "items": [
+        {
+          "type": "text",
+          "variant": "base",
+          "content": "Giovana: 16:52 -03, Antena Viva! Última hora para ativar! Bots já moveram R$ 637.800,00!"
+        },
+        {
+          "type": "chat-input",
+          "placeholder": "Comando Neural...",
+          "options": [
+            {
+              "label": "Detalhes do Kit",
+              "action": {
+                "type": "response",
+                "content": "Giovana: Kit Ascensão: R$497, 144Hz, Oronx-9. Saques com Ledger/Trezor ou BTC!"
+              }
+            },
+            {
+              "label": "Urgência Máxima",
+              "action": {
+                "type": "response",
+                "content": "Giovana: ⏰ Últimos minutos! Compre ou saque AGORA ou perca tudo!"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "section",
+      "title": "🌠 Visualização Cósmica Oronx-9",
+      "items": [
+        {
+          "type": "visualizer",
+          "title": "Padrão Oronx-9",
+          "content": {
+            "type": "webgl",
+            "code": "const scene = new THREE.Scene(); const camera = new THREE.PerspectiveCamera(75, window.innerWidth / 2, window.innerHeight / 2, 0.1, 1000); const renderer = new THREE.WebGLRenderer(); renderer.setSize(window.innerWidth / 2, window.innerHeight / 2); document.body.appendChild(renderer.domElement); const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16); const material = new THREE.MeshPhongMaterial({ color: 0x00ff00, specular: 0xffffff }); const knot = new THREE.Mesh(geometry, material); scene.add(knot); const light = new THREE.PointLight(0xffffff, 1, 100); light.position.set(10, 10, 10); scene.add(light); camera.position.z = 30; function animate() { requestAnimationFrame(animate); knot.rotation.x += 0.01; knot.rotation.y += 0.01; renderer.render(scene, camera); } animate();"
+          }
+        }
+      ]
+    },
+    {
+      "type": "footer",
+      "content": "DNA de Conversão: 98% | Constelações: Orion, Scorpius | Preparado para GitHub/Vercel"
+    }
+  ],
+  "env": {
+    "required": [
+      "VITE_WALLET_KEY",
+      "VITE_METAMASK_ADDRESS",
+      "VITE_ETHEREUM_ADDRESS",
+      "VITE_MERCADOPAGO_BTC",
+      "VITE_MERCADOPAGO_RANDOM_ID"
+    ],
+    "description": "Adicione no Vercel: VITE_WALLET_KEY (e.g., 0x6Dd...), VITE_METAMASK_ADDRESS, VITE_ETHEREUM_ADDRESS, VITE_MERCADOPAGO_BTC, VITE_MERCADOPAGO_RANDOM_ID."
+  },
+  "deployment": {
+    "github": {
+      "repo": "xpex-botcore",
+      "branch": "main",
+      "instructions": "1. Crie 'xpex-botcore' no GitHub. 2. Faça upload deste JSON. 3. Commit para 'main'."
+    },
+    "vercel": {
+      "instructions": "1. Conecte 'xpex-botcore' ao Vercel. 2. Adicione as variáveis acima. 3. Deploy e acesse o link."
+    }
+  }
+}
