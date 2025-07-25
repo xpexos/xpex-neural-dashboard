@@ -57,9 +57,9 @@ const navigationItems = [
 ];
 
 const mindCoreItems = [
-  { id: 'neural-graph', title: 'Visão Neural', icon: Eye },
-  { id: 'sim-vs-real', title: 'Saldo & Realidade', icon: DollarSign },
-  { id: 'script-control', title: 'Scripts Ativos', icon: Cpu },
+  { id: 'neural-graph', title: 'BotCore DNA', icon: Eye },
+  { id: 'sim-vs-real', title: 'Chat Giovana', icon: DollarSign },
+  { id: 'script-control', title: 'Master Unlocker', icon: Cpu },
   { id: 'layout-mutator', title: 'Mutação Visual', icon: RefreshCcw },
   { id: 'bot-detector', title: 'Radar Bot', icon: Target },
   { id: 'phantom-sim', title: 'Conversão Fantasma', icon: Ghost },

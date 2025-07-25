@@ -3,6 +3,9 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Switch } from './ui/switch';
 import { Badge } from './ui/badge';
+import BotCoreConversionDNA from './BotCoreConversionDNA';
+import GiovanaFakeChat from './GiovanaFakeChat';
+import MasterUnlocker from './MasterUnlocker';
 import { 
   Eye, 
   DollarSign, 
@@ -18,9 +21,9 @@ import {
 } from 'lucide-react';
 
 const sidebarItems = [
-  { id: 'neural-graph', label: 'Visão Neural', icon: Eye },
-  { id: 'sim-vs-real', label: 'Saldo & Realidade', icon: DollarSign },
-  { id: 'script-control', label: 'Scripts Ativos', icon: Cpu },
+  { id: 'neural-graph', label: 'BotCore DNA', icon: Eye },
+  { id: 'sim-vs-real', label: 'Chat Giovana', icon: DollarSign },
+  { id: 'script-control', label: 'Master Unlocker', icon: Cpu },
   { id: 'layout-mutator', label: 'Mutação Visual', icon: RefreshCcw },
   { id: 'bot-detector', label: 'Radar Bot', icon: Target },
   { id: 'phantom-sim', label: 'Conversão Fantasma', icon: Ghost },
@@ -276,9 +279,9 @@ const CommandRunner = () => (
 );
 
 const pageComponents = {
-  'neural-graph': NeuralGraph,
-  'sim-vs-real': SimVsReal,
-  'script-control': ScriptControl,
+  'neural-graph': BotCoreConversionDNA,
+  'sim-vs-real': GiovanaFakeChat,
+  'script-control': MasterUnlocker,
   'layout-mutator': LayoutMutator,
   'bot-detector': BotDetector,
   'phantom-sim': PhantomSim,
