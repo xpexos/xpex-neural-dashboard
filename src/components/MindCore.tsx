@@ -6,6 +6,10 @@ import { Badge } from './ui/badge';
 import BotCoreConversionDNA from './BotCoreConversionDNA';
 import GiovanaFakeChat from './GiovanaFakeChat';
 import MasterUnlocker from './MasterUnlocker';
+import XpexHyperFeed from './XpexHyperFeed';
+import GXCommandCenter from './GXCommandCenter';
+import XpexProdutos from './XpexProdutos';
+import XpexSupremeSystem from './XpexSupremeSystem';
 import { 
   Eye, 
   DollarSign, 
@@ -21,13 +25,13 @@ import {
 } from 'lucide-react';
 
 const sidebarItems = [
-  { id: 'neural-graph', label: 'BotCore DNA', icon: Eye },
+  { id: 'neural-graph', label: 'DNA Conversão', icon: Eye },
   { id: 'sim-vs-real', label: 'Chat Giovana', icon: DollarSign },
   { id: 'script-control', label: 'Master Unlocker', icon: Cpu },
-  { id: 'layout-mutator', label: 'Mutação Visual', icon: RefreshCcw },
-  { id: 'bot-detector', label: 'Radar Bot', icon: Target },
-  { id: 'phantom-sim', label: 'Conversão Fantasma', icon: Ghost },
-  { id: 'clone-core', label: 'Clonar Painel', icon: Copy },
+  { id: 'hyperfeed', label: 'HyperFeed', icon: RefreshCcw },
+  { id: 'gx-command', label: 'GX Command', icon: Target },
+  { id: 'produtos', label: 'Produtos Neural', icon: Ghost },
+  { id: 'supreme-system', label: 'Supreme System', icon: Copy },
   { id: 'command-runner', label: 'Execução Direta', icon: Terminal }
 ];
 
@@ -282,10 +286,10 @@ const pageComponents = {
   'neural-graph': BotCoreConversionDNA,
   'sim-vs-real': GiovanaFakeChat,
   'script-control': MasterUnlocker,
-  'layout-mutator': LayoutMutator,
-  'bot-detector': BotDetector,
-  'phantom-sim': PhantomSim,
-  'clone-core': CloneCore,
+  'hyperfeed': XpexHyperFeed,
+  'gx-command': GXCommandCenter,
+  'produtos': XpexProdutos,
+  'supreme-system': XpexSupremeSystem,
   'command-runner': CommandRunner
 };
 

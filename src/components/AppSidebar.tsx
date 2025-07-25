@@ -57,13 +57,13 @@ const navigationItems = [
 ];
 
 const mindCoreItems = [
-  { id: 'neural-graph', title: 'BotCore DNA', icon: Eye },
+  { id: 'neural-graph', title: 'DNA Conversão', icon: Eye },
   { id: 'sim-vs-real', title: 'Chat Giovana', icon: DollarSign },
   { id: 'script-control', title: 'Master Unlocker', icon: Cpu },
-  { id: 'layout-mutator', title: 'Mutação Visual', icon: RefreshCcw },
-  { id: 'bot-detector', title: 'Radar Bot', icon: Target },
-  { id: 'phantom-sim', title: 'Conversão Fantasma', icon: Ghost },
-  { id: 'clone-core', title: 'Clonar Painel', icon: Copy },
+  { id: 'hyperfeed', title: 'HyperFeed', icon: RefreshCcw },
+  { id: 'gx-command', title: 'GX Command', icon: Target },
+  { id: 'produtos', title: 'Produtos Neural', icon: Ghost },
+  { id: 'supreme-system', title: 'Supreme System', icon: Copy },
   { id: 'command-runner', title: 'Execução Direta', icon: Terminal },
 ];
 
